@@ -21,10 +21,17 @@ jobs:
           cache: 'maven'
 
       - name: Build with Maven
-        run: mvn clean package
+        run: |
+          POM_PATH=$(find . -maxdepth 3 -name "pom.xml" | head -n 1)
+          if [ -z "$POM_PATH" ]; then
+            echo "pom.xml tidak ditemukan!"
+            exit 1
+          fi
+          echo "Menggunakan POM: $POM_PATH"
+          mvn -f "$POM_PATH" clean package
 
       - name: Upload JAR artifact
         uses: actions/upload-artifact@v4
         with:
-          name: build-jar
+          name: JavrockStreak-JAR
           path: "**/target/*.jar"
