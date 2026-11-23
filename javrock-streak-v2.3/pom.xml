@@ -9,7 +9,7 @@
     <packaging>jar</packaging>
 
     <name>JavrockStreak</name>
-    <description>Plugin Daily Login Streak Api Solo, Duo 2 Player, dan Team BetterTeams dengan Multi-Mode Support & Multi-Mode Reward GUI untuk Paper 1.21.11</description>
+    <description>Plugin Daily Login Streak Api Solo, Duo 2 Player, dan Team BetterTeams dengan Multi-Mode Support &amp; Multi-Mode Reward GUI untuk Paper 1.21.11</description>
 
     <properties>
         <java.version>21</java.version>
