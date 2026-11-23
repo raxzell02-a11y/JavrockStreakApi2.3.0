@@ -1,0 +1,483 @@
+# Konfigurasi JavrockStreak v2.3.0 untuk Javrock SMP (Paper 1.21.11)
+# - /streak reward (atau /streak hadiah) membuka GUI Menu Mode (Solo Streak, Duo Streak, Team Streak).
+# - Klik salah satu mode untuk membuka GUI Hadiah Milestone khusus mode tersebut:
+#   * Reward Solo Streak
+#   * Reward Duo Streak
+#   * Team Reward
+# - Kombinasi mode: SOLO+TEAM atau DUO+TEAM diperbolehkan, SOLO+DUO tidak boleh bersamaan.
+
+settings:
+  # Zona waktu pergantian hari absen harian
+  timezone: 'Asia/Jakarta'
+
+  # Jumlah maksimal kesempatan restore per siklus (solo, duo, dan team)
+  max-restores: 3
+
+  # Syarat minimal anggota tim di BetterTeams untuk mengaktifkan /streak team api (non-OP)
+  min-team-members: 5
+
+  # Waktu kedaluwarsa undangan duo (/streak duo <playername>) dalam detik
+  invite-expire-seconds: 60
+
+  # Tampilkan notifikasi otomatis saat pemain login
+  notify-on-join: true
+
+gui:
+  # Menu utama saat menjalankan /streak reward
+  selector:
+    title: '&9&lᴊᴀᴠʀᴏᴄᴋ &8» &3ᴘɪʟɪʜ ᴍᴏᴅᴇ ꜱᴛʀᴇᴀᴋ'
+    rows: 3
+    filler-material: 'GRAY_STAINED_GLASS_PANE'
+    solo:
+      slot: 11
+      icon: 'BLAZE_POWDER'
+      name: '&6🔥 &b&lꜱᴏʟᴏ ꜱᴛʀᴇᴀᴋ'
+      lore:
+        - '&7ᴍᴏᴅᴇ ꜱᴛʀᴇᴀᴋ ɪɴᴅɪᴠɪᴅᴜ 1 ᴘʟᴀʏᴇʀ.'
+        - '&7ᴋʟɪᴋ ᴜɴᴛᴜᴋ ᴍᴇʟɪʜᴀᴛ &bʀᴇᴡᴀʀᴅ ꜱᴏʟᴏ ꜱᴛʀᴇᴀᴋ&7!'
+        - ''
+        - '&8• &3/ꜱᴛʀᴇᴀᴋ ᴀᴘɪ &7- ᴍᴜʟᴀɪ ꜱᴏʟᴏ ꜱᴛʀᴇᴀᴋ'
+        - '&8• &3/ꜱᴛʀᴇᴀᴋ ʀᴇꜱᴛᴏʀᴇ &7- ᴘᴜʟɪʜᴋᴀɴ ꜱᴛʀᴇᴀᴋ'
+    duo:
+      slot: 13
+      icon: 'GOLDEN_APPLE'
+      name: '&d🔥 &b&lᴅᴜᴏ ꜱᴛʀᴇᴀᴋ'
+      lore:
+        - '&7ᴍᴏᴅᴇ ꜱᴛʀᴇᴀᴋ ʙᴇʀᴅᴜᴀ 2 ᴘʟᴀʏᴇʀ.'
+        - '&7ᴋʟɪᴋ ᴜɴᴛᴜᴋ ᴍᴇʟɪʜᴀᴛ &dʀᴇᴡᴀʀᴅ ᴅᴜᴏ ꜱᴛʀᴇᴀᴋ&7!'
+        - ''
+        - '&8• &3/ꜱᴛʀᴇᴀᴋ ᴅᴜᴏ <ᴘʟᴀʏᴇʀ> &7- ᴜɴᴅᴀɴɢ ᴘᴀꜱᴀɴɢᴀɴ'
+        - '&8• &3/ꜱᴛʀᴇᴀᴋ ᴅᴜᴏ ʀᴇꜱᴛᴏʀᴇ &7- ᴘᴜʟɪʜᴋᴀɴ ᴅᴜᴏ'
+    team:
+      slot: 15
+      icon: 'NETHER_STAR'
+      name: '&3🔥 &b&lᴛᴇᴀᴍ ꜱᴛʀᴇᴀᴋ'
+      lore:
+        - '&7ᴍᴏᴅᴇ ꜱᴛʀᴇᴀᴋ ᴛɪᴍ (ᴍɪɴɪᴍᴀʟ 5 ᴀɴɢɢᴏᴛᴀ).'
+        - '&7ᴋʟɪᴋ ᴜɴᴛᴜᴋ ᴍᴇʟɪʜᴀᴛ &3ᴛᴇᴀᴍ ʀᴇᴡᴀʀᴅ&7!'
+        - ''
+        - '&8• &3/ꜱᴛʀᴇᴀᴋ ᴛᴇᴀᴍ ᴀᴘɪ &7- ᴍᴜʟᴀɪ ᴛᴇᴀᴍ ꜱᴛʀᴇᴀᴋ'
+        - '&8• &3/ꜱᴛʀᴇᴀᴋ ᴛᴇᴀᴍ ʀᴇꜱᴛᴏʀᴇ &7- ᴘᴜʟɪʜᴋᴀɴ ᴛᴇᴀᴍ'
+
+  # Sub-GUI masing-masing mode
+  solo-menu:
+    title: '&9&lᴊᴀᴠʀᴏᴄᴋ &8» &bʀᴇᴡᴀʀᴅ ꜱᴏʟᴏ ꜱᴛʀᴇᴀᴋ'
+    rows: 4
+    filler-material: 'GRAY_STAINED_GLASS_PANE'
+    info-slot: 4
+    back-slot: 31
+
+  duo-menu:
+    title: '&9&lᴊᴀᴠʀᴏᴄᴋ &8» &dʀᴇᴡᴀʀᴅ ᴅᴜᴏ ꜱᴛʀᴇᴀᴋ'
+    rows: 4
+    filler-material: 'GRAY_STAINED_GLASS_PANE'
+    info-slot: 4
+    back-slot: 31
+
+  team-menu:
+    title: '&9&lᴊᴀᴠʀᴏᴄᴋ &8» &3ᴛᴇᴀᴍ ʀᴇᴡᴀʀᴅ'
+    rows: 4
+    filler-material: 'GRAY_STAINED_GLASS_PANE'
+    info-slot: 4
+    back-slot: 31
+
+  back-button:
+    icon: 'ARROW'
+    name: '&c« ᴋᴇᴍʙᴀʟɪ ᴋᴇ ᴘɪʟɪʜᴀɴ ᴍᴏᴅᴇ'
+    lore:
+      - '&7ᴋʟɪᴋ ᴜɴᴛᴜᴋ ᴋᴇᴍʙᴀʟɪ ᴋᴇ ᴍᴇɴᴜ ꜱᴛʀᴇᴀᴋ ʀᴇᴡᴀʀᴅ.'
+
+# ==============================================================================
+# HADIAH MILESTONE PER MODE (SOLO < DUO < TEAM)
+# Placeholder pada commands: %player% dan %streak%
+# ==============================================================================
+milestones:
+  SOLO:
+    3:
+      slot: 10
+      icon: 'COAL'
+      name: '&6🔥 &bꜱᴏʟᴏ ꜱᴛʀᴇᴀᴋ 3 ʜᴀʀɪ'
+      lore:
+        - '&7ꜱᴛᴀᴛᴜꜱ: %status%'
+        - ''
+        - '&9&lʜᴀᴅɪᴀʜ ꜱᴏʟᴏ:'
+        - '&8• &f4x Iron Ingot'
+        - '&8• &b$200'
+        - '&8• &310 Points'
+        - '&8• &d1x Basic_2 Key'
+      commands:
+        - 'give %player% minecraft:iron_ingot 4'
+        - 'eco give %player% 200'
+        - 'points give %player% 10'
+        - 'crates key give %player% basic_2 1'
+    7:
+      slot: 11
+      icon: 'COPPER_INGOT'
+      name: '&6🔥 &bꜱᴏʟᴏ ꜱᴛʀᴇᴀᴋ 7 ʜᴀʀɪ'
+      lore:
+        - '&7ꜱᴛᴀᴛᴜꜱ: %status%'
+        - ''
+        - '&9&lʜᴀᴅɪᴀʜ ꜱᴏʟᴏ:'
+        - '&8• &f8x Iron Ingot & 2x Diamond'
+        - '&8• &b$1.000'
+        - '&8• &320 Points'
+        - '&8• &d2x Basic_2 Key & 1x Rares Key'
+      commands:
+        - 'give %player% minecraft:iron_ingot 8'
+        - 'give %player% minecraft:diamond 2'
+        - 'eco give %player% 1000'
+        - 'points give %player% 20'
+        - 'crates key give %player% basic_2 2'
+        - 'crates key give %player% rares 1'
+    10:
+      slot: 12
+      icon: 'GOLD_INGOT'
+      name: '&6🔥 &bꜱᴏʟᴏ ꜱᴛʀᴇᴀᴋ 10 ʜᴀʀɪ'
+      lore:
+        - '&7ꜱᴛᴀᴛᴜꜱ: %status%'
+        - ''
+        - '&9&lʜᴀᴅɪᴀʜ ꜱᴏʟᴏ:'
+        - '&8• &f14x Iron Ingot & 5x Diamond'
+        - '&8• &b$3.000'
+        - '&8• &335 Points'
+        - '&8• &d2x Rares Key & 1x Exotics Key'
+      commands:
+        - 'give %player% minecraft:iron_ingot 14'
+        - 'give %player% minecraft:diamond 5'
+        - 'eco give %player% 3000'
+        - 'points give %player% 35'
+        - 'crates key give %player% rares 2'
+        - 'crates key give %player% exotics 1'
+    15:
+      slot: 14
+      icon: 'EMERALD'
+      name: '&6🔥 &bꜱᴏʟᴏ ꜱᴛʀᴇᴀᴋ 15 ʜᴀʀɪ'
+      lore:
+        - '&7ꜱᴛᴀᴛᴜꜱ: %status%'
+        - ''
+        - '&9&lʜᴀᴅɪᴀʜ ꜱᴏʟᴏ:'
+        - '&8• &f20x Iron Ingot & 10x Diamond'
+        - '&8• &b$7.500'
+        - '&8• &355 Points'
+        - '&8• &d3x Rares Key & 1x Exotics Key'
+      commands:
+        - 'give %player% minecraft:iron_ingot 20'
+        - 'give %player% minecraft:diamond 10'
+        - 'eco give %player% 7500'
+        - 'points give %player% 55'
+        - 'crates key give %player% rares 3'
+        - 'crates key give %player% exotics 1'
+    30:
+      slot: 15
+      icon: 'DIAMOND'
+      name: '&6🔥 &bꜱᴏʟᴏ ꜱᴛʀᴇᴀᴋ 30 ʜᴀʀɪ'
+      lore:
+        - '&7ꜱᴛᴀᴛᴜꜱ: %status%'
+        - ''
+        - '&9&lʜᴀᴅɪᴀʜ ꜱᴏʟᴏ:'
+        - '&8• &f26x Iron Ingot, 15x Diamond & 1x Netherite Ingot'
+        - '&8• &b$14.000'
+        - '&8• &380 Points'
+        - '&8• &d2x Exotics Key'
+      commands:
+        - 'give %player% minecraft:iron_ingot 26'
+        - 'give %player% minecraft:diamond 15'
+        - 'give %player% minecraft:netherite_ingot 1'
+        - 'eco give %player% 14000'
+        - 'points give %player% 80'
+        - 'crates key give %player% exotics 2'
+    48:
+      slot: 16
+      icon: 'NETHER_STAR'
+      name: '&6🔥 &bꜱᴏʟᴏ ꜱᴛʀᴇᴀᴋ 48 ʜᴀʀɪ'
+      lore:
+        - '&7ꜱᴛᴀᴛᴜꜱ: %status%'
+        - ''
+        - '&9&lʜᴀᴅɪᴀʜ ꜱᴏʟᴏ:'
+        - '&8• &f32x Iron Ingot, 20x Diamond & 2x Netherite Ingot'
+        - '&8• &b$20.000'
+        - '&8• &3100 Points'
+        - '&8• &d3x Exotics Key'
+      commands:
+        - 'give %player% minecraft:iron_ingot 32'
+        - 'give %player% minecraft:diamond 20'
+        - 'give %player% minecraft:netherite_ingot 2'
+        - 'eco give %player% 20000'
+        - 'points give %player% 100'
+        - 'crates key give %player% exotics 3'
+
+  DUO:
+    3:
+      slot: 10
+      icon: 'COAL'
+      name: '&d🔥 &bᴅᴜᴏ ꜱᴛʀᴇᴀᴋ 3 ʜᴀʀɪ'
+      lore:
+        - '&7ꜱᴛᴀᴛᴜꜱ: %status%'
+        - ''
+        - '&d&lʜᴀᴅɪᴀʜ ᴅᴜᴏ (ᴍᴀꜱɪɴɢ-ᴍᴀꜱɪɴɢ):'
+        - '&8• &f8x Iron Ingot & 2x Diamond'
+        - '&8• &b$500'
+        - '&8• &320 Points'
+        - '&8• &d2x Basic_2 Key'
+      commands:
+        - 'give %player% minecraft:iron_ingot 8'
+        - 'give %player% minecraft:diamond 2'
+        - 'eco give %player% 500'
+        - 'points give %player% 20'
+        - 'crates key give %player% basic_2 2'
+    7:
+      slot: 11
+      icon: 'COPPER_INGOT'
+      name: '&d🔥 &bᴅᴜᴏ ꜱᴛʀᴇᴀᴋ 7 ʜᴀʀɪ'
+      lore:
+        - '&7ꜱᴛᴀᴛᴜꜱ: %status%'
+        - ''
+        - '&d&lʜᴀᴅɪᴀʜ ᴅᴜᴏ (ᴍᴀꜱɪɴɢ-ᴍᴀꜱɪɴɢ):'
+        - '&8• &f14x Iron Ingot & 5x Diamond'
+        - '&8• &b$2.500'
+        - '&8• &340 Points'
+        - '&8• &d3x Basic_2 Key & 2x Rares Key'
+      commands:
+        - 'give %player% minecraft:iron_ingot 14'
+        - 'give %player% minecraft:diamond 5'
+        - 'eco give %player% 2500'
+        - 'points give %player% 40'
+        - 'crates key give %player% basic_2 3'
+        - 'crates key give %player% rares 2'
+    10:
+      slot: 12
+      icon: 'GOLD_INGOT'
+      name: '&d🔥 &bᴅᴜᴏ ꜱᴛʀᴇᴀᴋ 10 ʜᴀʀɪ'
+      lore:
+        - '&7ꜱᴛᴀᴛᴜꜱ: %status%'
+        - ''
+        - '&d&lʜᴀᴅɪᴀʜ ᴅᴜᴏ (ᴍᴀꜱɪɴɢ-ᴍᴀꜱɪɴɢ):'
+        - '&8• &f20x Iron Ingot & 10x Diamond'
+        - '&8• &b$6.000'
+        - '&8• &370 Points'
+        - '&8• &d3x Rares Key & 1x Exotics Key'
+      commands:
+        - 'give %player% minecraft:iron_ingot 20'
+        - 'give %player% minecraft:diamond 10'
+        - 'eco give %player% 6000'
+        - 'points give %player% 70'
+        - 'crates key give %player% rares 3'
+        - 'crates key give %player% exotics 1'
+    15:
+      slot: 14
+      icon: 'EMERALD'
+      name: '&d🔥 &bᴅᴜᴏ ꜱᴛʀᴇᴀᴋ 15 ʜᴀʀɪ'
+      lore:
+        - '&7ꜱᴛᴀᴛᴜꜱ: %status%'
+        - ''
+        - '&d&lʜᴀᴅɪᴀʜ ᴅᴜᴏ (ᴍᴀꜱɪɴɢ-ᴍᴀꜱɪɴɢ):'
+        - '&8• &f28x Iron Ingot, 16x Diamond & 1x Netherite Ingot'
+        - '&8• &b$13.000'
+        - '&8• &3110 Points'
+        - '&8• &d4x Rares Key & 2x Exotics Key'
+      commands:
+        - 'give %player% minecraft:iron_ingot 28'
+        - 'give %player% minecraft:diamond 16'
+        - 'give %player% minecraft:netherite_ingot 1'
+        - 'eco give %player% 13000'
+        - 'points give %player% 110'
+        - 'crates key give %player% rares 4'
+        - 'crates key give %player% exotics 2'
+    30:
+      slot: 15
+      icon: 'DIAMOND'
+      name: '&d🔥 &bᴅᴜᴏ ꜱᴛʀᴇᴀᴋ 30 ʜᴀʀɪ'
+      lore:
+        - '&7ꜱᴛᴀᴛᴜꜱ: %status%'
+        - ''
+        - '&d&lʜᴀᴅɪᴀʜ ᴅᴜᴏ (ᴍᴀꜱɪɴɢ-ᴍᴀꜱɪɴɢ):'
+        - '&8• &f36x Iron Ingot, 22x Diamond & 2x Netherite Ingot'
+        - '&8• &b$24.000'
+        - '&8• &3150 Points'
+        - '&8• &d2x Exotics Key & 1x Mythics Key'
+      commands:
+        - 'give %player% minecraft:iron_ingot 36'
+        - 'give %player% minecraft:diamond 22'
+        - 'give %player% minecraft:netherite_ingot 2'
+        - 'eco give %player% 24000'
+        - 'points give %player% 150'
+        - 'crates key give %player% exotics 2'
+        - 'crates key give %player% mythics 1'
+    48:
+      slot: 16
+      icon: 'NETHER_STAR'
+      name: '&d🔥 &bᴅᴜᴏ ꜱᴛʀᴇᴀᴋ 48 ʜᴀʀɪ'
+      lore:
+        - '&7ꜱᴛᴀᴛᴜꜱ: %status%'
+        - ''
+        - '&d&lʜᴀᴅɪᴀʜ ᴅᴜᴏ (ᴍᴀꜱɪɴɢ-ᴍᴀꜱɪɴɢ):'
+        - '&8• &f44x Iron Ingot, 30x Diamond & 3x Netherite Ingot'
+        - '&8• &b$35.000'
+        - '&8• &3200 Points'
+        - '&8• &d3x Exotics Key & 2x Mythics Key'
+      commands:
+        - 'give %player% minecraft:iron_ingot 44'
+        - 'give %player% minecraft:diamond 30'
+        - 'give %player% minecraft:netherite_ingot 3'
+        - 'eco give %player% 35000'
+        - 'points give %player% 200'
+        - 'crates key give %player% exotics 3'
+        - 'crates key give %player% mythics 2'
+
+  TEAM:
+    3:
+      slot: 10
+      icon: 'COAL'
+      name: '&3🔥 &bᴛᴇᴀᴍ ꜱᴛʀᴇᴀᴋ 3 ʜᴀʀɪ'
+      lore:
+        - '&7ꜱᴛᴀᴛᴜꜱ: %status%'
+        - ''
+        - '&3&lʜᴀᴅɪᴀʜ ᴛᴇᴀᴍ (ꜱᴇᴍᴜᴀ ᴀɴɢɢᴏᴛᴀ):'
+        - '&8• &f14x Iron Ingot & 4x Diamond'
+        - '&8• &b$1.200'
+        - '&8• &335 Points'
+        - '&8• &d3x Basic_2 Key'
+      commands:
+        - 'give %player% minecraft:iron_ingot 14'
+        - 'give %player% minecraft:diamond 4'
+        - 'eco give %player% 1200'
+        - 'points give %player% 35'
+        - 'crates key give %player% basic_2 3'
+    7:
+      slot: 11
+      icon: 'COPPER_INGOT'
+      name: '&3🔥 &bᴛᴇᴀᴍ ꜱᴛʀᴇᴀᴋ 7 ʜᴀʀɪ'
+      lore:
+        - '&7ꜱᴛᴀᴛᴜꜱ: %status%'
+        - ''
+        - '&3&lʜᴀᴅɪᴀʜ ᴛᴇᴀᴍ (ꜱᴇᴍᴜᴀ ᴀɴɢɢᴏᴛᴀ):'
+        - '&8• &f22x Iron Ingot & 9x Diamond'
+        - '&8• &b$5.000'
+        - '&8• &370 Points'
+        - '&8• &d4x Basic_2 Key & 3x Rares Key'
+      commands:
+        - 'give %player% minecraft:iron_ingot 22'
+        - 'give %player% minecraft:diamond 9'
+        - 'eco give %player% 5000'
+        - 'points give %player% 70'
+        - 'crates key give %player% basic_2 4'
+        - 'crates key give %player% rares 3'
+    10:
+      slot: 12
+      icon: 'GOLD_INGOT'
+      name: '&3🔥 &bᴛᴇᴀᴍ ꜱᴛʀᴇᴀᴋ 10 ʜᴀʀɪ'
+      lore:
+        - '&7ꜱᴛᴀᴛᴜꜱ: %status%'
+        - ''
+        - '&3&lʜᴀᴅɪᴀʜ ᴛᴇᴀᴍ (ꜱᴇᴍᴜᴀ ᴀɴɢɢᴏᴛᴀ):'
+        - '&8• &f32x Iron Ingot, 16x Diamond & 1x Netherite Ingot'
+        - '&8• &b$11.000'
+        - '&8• &3120 Points'
+        - '&8• &d4x Rares Key & 2x Exotics Key'
+      commands:
+        - 'give %player% minecraft:iron_ingot 32'
+        - 'give %player% minecraft:diamond 16'
+        - 'give %player% minecraft:netherite_ingot 1'
+        - 'eco give %player% 11000'
+        - 'points give %player% 120'
+        - 'crates key give %player% rares 4'
+        - 'crates key give %player% exotics 2'
+    15:
+      slot: 14
+      icon: 'EMERALD'
+      name: '&3🔥 &bᴛᴇᴀᴍ ꜱᴛʀᴇᴀᴋ 15 ʜᴀʀɪ'
+      lore:
+        - '&7ꜱᴛᴀᴛᴜꜱ: %status%'
+        - ''
+        - '&3&lʜᴀᴅɪᴀʜ ᴛᴇᴀᴍ (ꜱᴇᴍᴜᴀ ᴀɴɢɢᴏᴛᴀ):'
+        - '&8• &f42x Iron Ingot, 24x Diamond & 2x Netherite Ingot'
+        - '&8• &b$22.000'
+        - '&8• &3180 Points'
+        - '&8• &d5x Rares Key & 2x Exotics Key'
+      commands:
+        - 'give %player% minecraft:iron_ingot 42'
+        - 'give %player% minecraft:diamond 24'
+        - 'give %player% minecraft:netherite_ingot 2'
+        - 'eco give %player% 22000'
+        - 'points give %player% 180'
+        - 'crates key give %player% rares 5'
+        - 'crates key give %player% exotics 2'
+    30:
+      slot: 15
+      icon: 'DIAMOND'
+      name: '&3🔥 &bᴛᴇᴀᴍ ꜱᴛʀᴇᴀᴋ 30 ʜᴀʀɪ'
+      lore:
+        - '&7ꜱᴛᴀᴛᴜꜱ: %status%'
+        - ''
+        - '&3&lʜᴀᴅɪᴀʜ ᴛᴇᴀᴍ (ꜱᴇᴍᴜᴀ ᴀɴɢɢᴏᴛᴀ):'
+        - '&8• &f52x Iron Ingot, 32x Diamond & 3x Netherite Ingot'
+        - '&8• &b$38.000'
+        - '&8• &3260 Points'
+        - '&8• &d3x Exotics Key & 2x Mythics Key'
+        - '&8• &9Blast Pickaxe 3x3'
+      commands:
+        - 'give %player% minecraft:iron_ingot 52'
+        - 'give %player% minecraft:diamond 32'
+        - 'give %player% minecraft:netherite_ingot 3'
+        - 'eco give %player% 38000'
+        - 'points give %player% 260'
+        - 'crates key give %player% exotics 3'
+        - 'crates key give %player% mythics 2'
+        - 'ce give %player% Item:NETHERITE_PICKAXE, Amount:1, Name:&9&lBlast &3&lPickaxe, Blast:1'
+    48:
+      slot: 16
+      icon: 'NETHER_STAR'
+      name: '&3🔥 &bᴛᴇᴀᴍ ꜱᴛʀᴇᴀᴋ 48 ʜᴀʀɪ'
+      lore:
+        - '&7ꜱᴛᴀᴛᴜꜱ: %status%'
+        - ''
+        - '&3&lʜᴀᴅɪᴀʜ ᴛᴇᴀᴍ (ꜱᴇᴍᴜᴀ ᴀɴɢɢᴏᴛᴀ):'
+        - '&8• &f64x Iron Ingot, 45x Diamond & 5x Netherite Ingot'
+        - '&8• &b$60.000'
+        - '&8• &3350 Points'
+        - '&8• &d3x Exotics Key & 4x Mythics Key'
+      commands:
+        - 'give %player% minecraft:iron_ingot 64'
+        - 'give %player% minecraft:diamond 45'
+        - 'give %player% minecraft:netherite_ingot 5'
+        - 'eco give %player% 60000'
+        - 'points give %player% 350'
+        - 'crates key give %player% exotics 3'
+        - 'crates key give %player% mythics 4'
+
+messages:
+  prefix: '&9&lᴊᴀᴠʀᴏᴄᴋ &8» '
+  started: '&a🔥 ꜱᴛʀᴇᴀᴋ ᴀᴘɪ (%mode%) ᴅɪᴍᴜʟᴀɪ! &7ꜱᴛʀᴇᴀᴋ: &b1 ʜᴀʀɪ &8| &7ꜱɪꜱᴀ ʀᴇꜱᴛᴏʀᴇ: &3%restores%/%max_restores%'
+  already-active: '&e🔥 ꜱᴛʀᴇᴀᴋ ᴀᴘɪ ᴋᴀᴍᴜ (%mode%) ꜱᴜᴅᴀʜ ᴀᴋᴛɪꜰ (&b%streak% ʜᴀʀɪ&e)!'
+  need-restore-first: '&c🔥 ꜱᴛʀᴇᴀᴋ ᴀᴘɪ ᴋᴀᴍᴜ (%mode%) ᴍᴀᴛɪ ᴅɪ &b%streak% ʜᴀʀɪ&c! ɢᴜɴᴀᴋᴀɴ &3%restore_cmd% &7(ꜱɪꜱᴀ: &b%restores%x&7) ᴜɴᴛᴜᴋ ᴍᴇʟᴀɴᴊᴜᴛᴋᴀɴ.'
+  daily-checkin-part: '&b✔ ᴀʙꜱᴇɴ ʜᴀʀɪ ɪɴɪ ᴛᴇʀᴄᴀᴛᴀᴛ! &7ᴍᴇɴᴜɴɢɢᴜ ᴀɴɢɢᴏᴛᴀ ʟᴀɪɴ ʟᴏɢɪɴ ʜᴀʀɪ ɪɴɪ ᴜɴᴛᴜᴋ ᴍᴇɴᴀɪᴋᴋᴀɴ ꜱᴛʀᴇᴀᴋ &3(%checked%/%total%)&7.'
+  daily-increment: '&a🔥 ꜱᴇᴍᴜᴀ ᴀɴɢɢᴏᴛᴀ ꜱᴜᴅᴀʜ ᴀʙꜱᴇɴ! ꜱᴛʀᴇᴀᴋ ᴀᴘɪ (%mode%) ɴᴀɪᴋ ᴍᴇɴᴊᴀᴅɪ &b%streak% ʜᴀʀɪ&a!'
+  streak-died: '&c💀 ꜱᴛʀᴇᴀᴋ ᴀᴘɪ (%mode%) ᴍᴀᴛɪ ᴋᴀʀᴇɴᴀ ᴀᴅᴀ ᴀɴɢɢᴏᴛᴀ ʏᴀɴɢ ᴛɪᴅᴀᴋ ʟᴏɢɪɴ ᴋᴇᴍᴀʀɪɴ (&b%streak% ʜᴀʀɪ&c)! ɢᴜɴᴀᴋᴀɴ &3%restore_cmd% &7(ꜱɪꜱᴀ: &b%restores%x&7).'
+  streak-died-no-restore: '&c💀 ꜱᴛʀᴇᴀᴋ ᴀᴘɪ (%mode%) ᴍᴀᴛɪ ᴅᴀɴ ᴋᴇꜱᴇᴍᴘᴀᴛᴀɴ ʀᴇꜱᴛᴏʀᴇ ꜱᴜᴅᴀʜ ʜᴀʙɪꜱ (0/%max_restores%)! ᴍᴜʟᴀɪ ꜱᴛʀᴇᴀᴋ ʙᴀʀᴜ ᴜɴᴛᴜᴋ ᴍᴇɴɢᴜʟᴀɴɢ.'
+  restored: '&a✨ ꜱᴛʀᴇᴀᴋ ᴀᴘɪ (%mode%) ʙᴇʀʜᴀꜱɪʟ ᴅɪᴘᴜʟɪʜᴋᴀɴ! &7ꜱᴛʀᴇᴀᴋ ʟᴀɴᴊᴜᴛ ᴋᴇ &b%streak% ʜᴀʀɪ &8| &7ꜱɪꜱᴀ ʀᴇꜱᴛᴏʀᴇ: &3%restores%/%max_restores%'
+  cannot-restore-alive: '&eꜱᴛʀᴇᴀᴋ ᴀᴘɪ ᴋᴀᴍᴜ ᴍᴀꜱɪʜ ᴀᴋᴛɪꜰ, ᴛɪᴅᴀᴋ ᴘᴇʀʟᴜ ʀᴇꜱᴛᴏʀᴇ!'
+  cannot-restore-not-started: '&cᴋᴀᴍᴜ ʙᴇʟᴜᴍ ᴍᴇᴍɪʟɪᴋɪ ꜱᴛʀᴇᴀᴋ ᴜɴᴛᴜᴋ ᴅɪᴘᴜʟɪʜᴋᴀɴ!'
+  wrong-restore-cmd: '&cɢᴜɴᴀᴋᴀɴ &3%restore_cmd% &cᴜɴᴛᴜᴋ ᴍᴇᴍᴜʟɪʜᴋᴀɴ ꜱᴛʀᴇᴀᴋ ᴍᴏᴅᴇ ɪɴɪ!'
+  no-restores-left: '&cᴋᴇꜱᴇᴍᴘᴀᴛᴀɴ ʀᴇꜱᴛᴏʀᴇ ᴋᴀᴍᴜ ꜱᴜᴅᴀʜ ʜᴀʙɪꜱ (0/%max_restores%)! ᴍᴜʟᴀɪ ꜱᴛʀᴇᴀᴋ ʙᴀʀᴜ ᴜɴᴛᴜᴋ ᴍᴇɴɢᴜʟᴀɴɢ ᴅᴀʀɪ ᴀᴡᴀʟ.'
+  cannot-combine-solo-duo: '&c🔥 ᴋᴀᴍᴜ ᴛɪᴅᴀᴋ ʙɪꜱᴀ ᴍᴇɴɢᴀᴍʙɪʟ ᴍᴏᴅᴇ &6ꜱᴏʟᴏ &cᴅᴀɴ &dᴅᴜᴏ &cꜱᴇᴄᴀʀᴀ ʙᴇʀꜱᴀᴍᴀᴀɴ! &7(ʜᴀɴʏᴀ ʙᴏʟᴇʜ &6ꜱᴏʟᴏ+ᴛᴇᴀᴍ &7ᴀᴛᴀᴜ &dᴅᴜᴏ+ᴛᴇᴀᴍ&7)'
+  target-cannot-combine-solo-duo: '&cᴘʟᴀʏᴇʀ &3%target% &cꜱᴇᴅᴀɴɢ ᴍᴇᴍɪʟɪᴋɪ ᴍᴏᴅᴇ &6ꜱᴏʟᴏ &cᴀᴛᴀᴜ &dᴅᴜᴏ &cʏᴀɴɢ ᴛɪᴅᴀᴋ ʙɪꜱᴀ ᴅɪɢᴀʙᴜɴɢᴋᴀɴ.'
+  max-modes-reached: '&cᴋᴀᴍᴜ ꜱᴜᴅᴀʜ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ᴍᴀᴋꜱɪᴍᴀʟ &b2 ᴍᴏᴅᴇ ꜱᴛʀᴇᴀᴋ &cꜱᴇᴋᴀʟɪɢᴜꜱ.'
+  invite-sent: '&b✉ ᴜɴᴅᴀɴɢᴀɴ ꜱᴛʀᴇᴀᴋ ʙᴇʀᴅᴜᴀ ᴛᴇʟᴀʜ ᴅɪᴋɪʀɪᴍ ᴋᴇ &3%target%&b! ᴍᴇɴᴜɴɢɢᴜ &3/ꜱᴛʀᴇᴀᴋ ᴀᴄᴄᴇᴘᴛ&b.'
+  invite-received: '&b✉ &3%sender% &7ᴍᴇɴɢᴜɴᴅᴀɴɢᴍᴜ ᴜɴᴛᴜᴋ ᴍᴇɴʏᴀʟᴀᴋᴀɴ &6🔥 ꜱᴛʀᴇᴀᴋ ᴀᴘɪ ʙᴇʀᴅᴜᴀ&7! ᴋᴇᴛɪᴋ &3/ꜱᴛʀᴇᴀᴋ ᴀᴄᴄᴇᴘᴛ &7ᴅᴀʟᴀᴍ 60 ᴅᴇᴛɪᴋ.'
+  invite-none: '&cᴛɪᴅᴀᴋ ᴀᴅᴀ ᴜɴᴅᴀɴɢᴀɴ ꜱᴛʀᴇᴀᴋ ʏᴀɴɢ ᴀᴋᴛɪꜰ ᴀᴛᴀᴜ ꜱᴜᴅᴀʜ ᴋᴇᴅᴀʟᴜᴡᴀʀꜱᴀ.'
+  invite-self: '&cᴋᴀᴍᴜ ᴛɪᴅᴀᴋ ʙɪꜱᴀ ᴍᴇɴɢᴜɴᴅᴀɴɢ ᴅɪʀɪ ꜱᴇɴᴅɪʀɪ.'
+  player-offline: '&cᴘʟᴀʏᴇʀ &3%target% &cᴛɪᴅᴀᴋ ᴅɪᴛᴇᴍᴜᴋᴀɴ ᴀᴛᴀᴜ ꜱᴇᴅᴀɴɢ ᴏꜰꜰʟɪɴᴇ.'
+  target-busy: '&cᴘʟᴀʏᴇʀ &3%target% &cꜱᴜᴅᴀʜ ᴍᴇᴍɪʟɪᴋɪ ꜱᴛʀᴇᴀᴋ ᴍᴏᴅᴇ ɪɴɪ ʏᴀɴɢ ʙᴇʟᴜᴍ ꜱᴇʟᴇꜱᴀɪ.'
+  team-not-found: '&cᴋᴀᴍᴜ ᴛɪᴅᴀᴋ ᴛᴇʀɢᴀʙᴜɴɢ ᴅᴀʟᴀᴍ ᴛᴇᴀᴍ ᴍᴀɴᴀ ᴘᴜɴ (ʙᴇᴛᴛᴇʀᴛᴇᴀᴍꜱ)!'
+  team-min-members: '&cꜱᴛʀᴇᴀᴋ ᴛᴇᴀᴍ ᴍᴇᴍᴇʀʟᴜᴋᴀɴ ᴍɪɴɪᴍᴀʟ &b%min% &cᴀɴɢɢᴏᴛᴀ ᴅɪ ʙᴇᴛᴛᴇʀᴛᴇᴀᴍꜱ (ꜱᴀᴀᴛ ɪɴɪ: &3%current%&c)!'
+  team-plugin-missing: '&cᴘʟᴜɢɪɴ ʙᴇᴛᴛᴇʀᴛᴇᴀᴍꜱ ᴛɪᴅᴀᴋ ᴛᴇʀᴘᴀꜱᴀɴɢ ᴅɪ ꜱᴇʀᴠᴇʀ.'
+  milestone-reached: '&6🎉 ꜱᴇʟᴀᴍᴀᴛ! &7ꜱᴛʀᴇᴀᴋ (%mode%) ᴍᴇɴᴄᴀᴘᴀɪ &b%streak% ʜᴀʀɪ &7ᴅᴀɴ ᴍᴇɴᴅᴀᴘᴀᴛᴋᴀɴ ʜᴀᴅɪᴀʜ!'
+  gui-status-claimed: '&a✔ ꜱᴜᴅᴀʜ ᴅɪᴋʟᴀɪᴍ'
+  gui-status-locked: '&c✘ ʙᴇʟᴜᴍ ᴛᴇʀᴄᴀᴘᴀɪ'
+  gui-status-other-mode: '&7🔒 ʙᴇʟᴜᴍ ᴀᴋᴛɪꜰ ᴅɪ ᴍᴏᴅᴇ %mode_name%'
+  top-header: '&8&m----------------------------------------'
+  top-title: '&9&lᴊᴀᴠʀᴏᴄᴋ &8» &bᴛᴏᴘ 10 ꜱᴛʀᴇᴀᴋ ᴀᴘɪ ᴛᴇʀᴛɪɴɢɢɪ'
+  top-entry: '&3#%rank% &b%label% &8- &6🔥 &f%streak% ʜᴀʀɪ &7(%state%&7)'
+  top-empty: '&7ʙᴇʟᴜᴍ ᴀᴅᴀ ᴘᴇᴍᴀɪɴ/ᴛᴇᴀᴍ ʏᴀɴɢ ᴍᴇᴍɪʟɪᴋɪ ꜱᴛʀᴇᴀᴋ.'
+  reloaded: '&bᴋᴏɴꜰɪɢᴜʀᴀꜱɪ ᴊᴀᴠʀᴏᴄᴋꜱᴛʀᴇᴀᴋ ʙᴇʀʜᴀꜱɪʟ ᴅɪᴍᴜᴀᴛ ᴜʟᴀɴɢ.'
+  no-permission: '&cᴋᴀᴍᴜ ᴛɪᴅᴀᴋ ᴍᴇᴍɪʟɪᴋɪ ɪᴢɪɴ ᴜɴᴛᴜᴋ ᴍᴇɴɢɢᴜɴᴀᴋᴀɴ ᴘᴇʀɪɴᴛᴀʜ ɪɴɪ.'

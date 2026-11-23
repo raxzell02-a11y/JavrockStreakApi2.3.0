@@ -1,0 +1,25 @@
+name: JavrockStreak
+version: 2.3.0
+main: id.javrock.streak.JavrockStreakPlugin
+api-version: '1.21'
+author: Javrock SMP
+description: Sistem Daily Login Streak Api Solo, Duo, dan Team (BetterTeams) dengan Multi-Mode (Solo+Team / Duo+Team) & GUI Milestone Reward terpisah.
+softdepend: [BetterTeams, PlaceholderAPI]
+commands:
+  streak:
+    description: Perintah utama JavrockStreak (solo, duo, team, restore, reward)
+    aliases: [javrockstreak, api]
+    usage: /streak [api|duo <player>|duo restore|accept|team api|team restore|restore|reward|hadiah|info|top|reload]
+  streaktop:
+    description: Melihat peringkat pemain, duo, dan team dengan streak tertinggi
+    aliases: [topstreak]
+    usage: /streaktop
+  streakadmin:
+    description: Perintah admin/operator untuk mengelola & mengetes streak solo, duo, dan team
+    aliases: [sadmin]
+    permission: javrockstreak.admin
+    usage: /streakadmin <addday|setday|setrestore|kill|reset|info|teamapi|teamrestore|duo|duorestore> <target> [jumlah]
+permissions:
+  javrockstreak.admin:
+    description: Akses penuh ke /streakadmin dan /streak reload
+    default: op
