@@ -1,4 +1,4 @@
-name: Build Plugin
+name: Build JavrockStreak
 
 on:
   push:
@@ -10,28 +10,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout kode
         uses: actions/checkout@v4
 
-      - name: Set up JDK 21
+      - name: Setup Java 21
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '21'
           cache: 'maven'
 
-      - name: Build with Maven
+      - name: Build dengan Maven
         run: |
-          POM_PATH=$(find . -maxdepth 3 -name "pom.xml" | head -n 1)
-          if [ -z "$POM_PATH" ]; then
-            echo "pom.xml tidak ditemukan!"
-            exit 1
+          if [ -f "pom.xml" ]; then
+            mvn clean package
+          elif [ -f "javrock-streak-v2.3/pom.xml" ]; then
+            mvn -f javrock-streak-v2.3/pom.xml clean package
+          elif [ -f "javrock-streak-v2.2/pom.xml" ]; then
+            mvn -f javrock-streak-v2.2/pom.xml clean package
+          elif [ -f "javrock-streak-v2.1/pom.xml" ]; then
+            mvn -f javrock-streak-v2.1/pom.xml clean package
+          elif [ -f "javrock-streak/pom.xml" ]; then
+            mvn -f javrock-streak/pom.xml clean package
+          else
+            echo "pom.xml tidak ditemukan!" && exit 1
           fi
-          echo "Menggunakan POM: $POM_PATH"
-          mvn -f "$POM_PATH" clean package
 
-      - name: Upload JAR artifact
+      - name: Upload file JAR
         uses: actions/upload-artifact@v4
         with:
           name: JavrockStreak-JAR
-          path: "**/target/*.jar"
+          path: "**/target/JavrockStreak-*.jar"
